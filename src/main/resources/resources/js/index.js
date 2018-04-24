@@ -1,7 +1,13 @@
 $(document).ready(function() {
+	// 初始化背景
 	initBack();
 });
-//初始化背景
+// 发送信息
+function sendMsg() {
+	var msg = $('textarea').val();
+	
+}
+// 初始化背景
 function initBack() {
 	var victor = new Victor("container", "output");
 	var theme = [ [ "#002c4a", "#005584" ], [ "#35ac03", "#3f4303" ],

@@ -11,7 +11,13 @@ public class Test {
 
 	@GetMapping("/test")
 	public String test() {
-		log.info("success");
+		log.info("this is test api");
+		return "Hello World";
+	}
+	
+	@GetMapping("/login/a")
+	public String login() {
+		log.info("this is login api");
 		return "Hello World";
 	}
 }
