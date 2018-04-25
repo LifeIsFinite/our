@@ -1,0 +1,7 @@
+logging:
+  file: ./logs/chat.log
+server:
+  port: 8082
+spring:
+  application:
+    name: chat
