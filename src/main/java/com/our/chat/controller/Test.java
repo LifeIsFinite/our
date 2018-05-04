@@ -1,18 +1,18 @@
 package com.our.chat.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController
+@Controller
 public class Test {
 
-	@GetMapping("/test")
+	@GetMapping("/chat")
 	public String test() {
 		log.info("this is test api");
-		return "Hello World";
+		return "index";
 	}
 	
 	@GetMapping("/login/a")

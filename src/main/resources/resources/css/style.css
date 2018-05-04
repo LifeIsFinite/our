@@ -1,39 +1,78 @@
 html,body,h1,h2,h3,h4,h5 {margin:0;padding:0;width:100%;height:100%;}
+body {
+	overflow: auto;
+}
 .fl {
 	float: left;
 }
 .fr {
-	folat: right;
+	float: right;
 }
 .chat-box {
 	background-color: rgba(245, 245, 245, 0.26);
 	border: 1px solid lightgray;
 	position: absolute;
 	z-index: 999;
-	top: 50%;
+	top: 50px;
 	left: 50%;
-	transform: translate(-50%, -55%);
+	transform: translateX(-55%);
 	width: 50%;
-	height: 70%;
+	min-height: 70%;
 	box-shadow: 0 0 50px lightgray;
 }
 .chat-box .context {
 	width: 100%;
 	height: 75%;
-	padding: 0 20px 10px 20px;
+	min-height: 200px;
 	overflow-y: auto;
+	padding-bottom: 10px;
 	border-bottom: 1px solid lightgray;
 	position: relative;
 }
-.chat-box .context .row {
+.chat-box .context .chat-row {
 	margin-top: 10px;
-	position: absolute;
-	width: 70%;
+	width: 100%;
 	left: 0;
+	color: aliceblue;
+	padding: 0 10px;
+}
+.chat-row .row-head {
+	width: 40px;
+	height: 40px;
+}
+.chat-row .row-head img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.chat-row .row-body-l {
+	padding-left: 50px;
+	width: 100%;
+}
+.chat-row .row-body-r {
+	padding-right: 50px;
+	width: 100%;
+}
+.chat-row .row-body-l .row-name {
+	
+}
+.chat-row .row-body-l .row-name {
+	
+}
+.chat-row .row-body-l .row-msg {
+	background-color: #d3d3d378;
+	border-radius: 3px;
+	padding: 5px 7px;
+}
+.chat-row .row-body-r .row-msg {
+	background-color: #d3d3d378;
+	border-radius: 3px;
+	padding: 5px 7px;
 }
 .chat-box .edit {
 	width: 100%;
 	height: 25%;
+	min-height: 100px;
 	padding: 10px 20px;
 }
 .chat-box .edit .tools {
