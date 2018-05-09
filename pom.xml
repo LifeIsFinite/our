@@ -6,7 +6,6 @@
 	<groupId>com.our</groupId>
 	<artifactId>our_chat</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>our_chat</name>
 	<description>Chat project for Our</description>
@@ -77,6 +76,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+            <mainClass>com.our.chat.ChatApplication</mainClass>
+        </configuration>
 			</plugin>
 		</plugins>
 	</build>
