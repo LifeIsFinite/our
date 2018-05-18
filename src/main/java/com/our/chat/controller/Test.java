@@ -1,23 +1,31 @@
 package com.our.chat.controller;
 
-import org.springframework.stereotype.Controller;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.our.chat.common.result.ApiResult;
+import com.our.chat.common.result.ApiResultFactory;
+import com.our.chat.common.result.EnumResult;
+import com.our.chat.dao.UserDao;
+import com.our.chat.domain.UserAccount;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Controller
+@RestController
 public class Test {
-
-	@GetMapping("/chat")
-	public String test() {
-		log.info("this is test api");
-		return "index";
-	}
 	
+	@Autowired
+	private UserDao userDao;
+
 	@GetMapping("/login/a")
-	public String login() {
+	public ApiResult login(UserAccount user, HttpServletRequest request, HttpServletResponse response) {
 		log.info("this is login api");
-		return "Hello World";
+		user = userDao.findByAccoundAndPassword(user);
+		return ApiResultFactory.result(EnumResult.SIGN_SUCCESS, user);
 	}
 }

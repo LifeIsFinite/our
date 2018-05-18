@@ -32,9 +32,9 @@ body {
 }
 .chat-panel {
 	width: 100%;
-	height: calc(100% - 50px);
+	height: 100%;
 	position: relative;
-	padding: 50px 70px 70px 70px;
+	padding: 50px 70px;
 	overflow: auto;
 }
 .chat-box {
@@ -50,53 +50,46 @@ body {
 	width: 100%;
 	height: 75%;
 	overflow-y: auto;
-	padding-bottom: 10px;
+	padding: 10px 0;
 	border-bottom: 1px solid lightgray;
 	position: relative;
 }
 .chat-box .context .chat-row {
-	margin-top: 10px;
 	width: 100%;
 	left: 0;
 	color: aliceblue;
 	padding: 0 10px;
+	position: relative;
 }
 .chat-row .row-head {
-	width: 40px;
-	height: 40px;
-}
-.chat-row .row-head img {
 	width: 100%;
 	height: 100%;
+}
+.chat-row .row-head img {
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 }
-.chat-row .row-body-l {
-	padding-left: 50px;
-	width: 100%;
-}
-.chat-row .row-body-r {
-	padding-right: 50px;
-	width: 100%;
-}
-.chat-row .row-body-l .row-name {
-	
-}
-.chat-row .row-body-l .row-name {
-	
-}
-.chat-row .row-body-l .row-msg {
-	background-color: #d3d3d378;
-	border-radius: 3px;
-	padding: 5px 7px;
-	width: 65%;
-}
-.chat-row .row-body-r .row-msg {
-	background-color: #d3d3d378;
-	border-radius: 3px;
-	padding: 5px 7px;
-	width: 65%;
+.chat-row .row-body {
 	position: absolute;
-  right: 60px;
+	top: 0;
+	left: 60px;
+	width: 58%;
+}
+.chat-row .row-body .row-msg {
+	background-color: #d3d3d378;
+	border-radius: 3px;
+  padding: 5px 7px;
+  display: inline-block;
+  text-align: left;
+}
+.chat-row-right .row-head {
+	text-align: right;
+}
+.chat-row-right .row-body {
+	right: 60px;
+	left: unset;
+  text-align: right;
 }
 .chat-box .edit {
 	width: 100%;

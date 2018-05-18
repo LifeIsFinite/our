@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.our.chat.dao.UserDao">
+	<sql id="BASE_TABLE">
+		user_account
+	</sql>
+
+	<sql id="BASE_COLUMN">
+		id,user_id,account,password,plat_form
+	</sql>
+
+	<select id="selectUsers" parameterType="com.our.chat.domain.UserAccount" resultType="com.our.chat.domain.UserAccount">
+		SELECT
+		<include refid="BASE_COLUMN" />
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+			account = #{account, jdbcType=VARCHAR}
+		AND
+			password = #{password, jdbcType=VARCHAR}
+	</select>
+
+</mapper>
