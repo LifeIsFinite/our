@@ -9,7 +9,7 @@
 		id,user_id,account,password,plat_form
 	</sql>
 
-	<select id="selectUsers" parameterType="com.our.chat.domain.UserAccount" resultType="com.our.chat.domain.UserAccount">
+	<select id="findByAccoundAndPassword" parameterType="com.our.chat.domain.UserAccount" resultType="com.our.chat.domain.UserAccount">
 		SELECT
 		<include refid="BASE_COLUMN" />
 		FROM

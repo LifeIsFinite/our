@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.alibaba.druid.pool.DruidDataSource;
+
 @Slf4j
 @Configuration
 public class DruidDBConfig {
@@ -72,7 +74,7 @@ public class DruidDBConfig {
     @Bean     //声明其为Bean实例
     @Primary  //在同样的DataSource中，首先使用被标注的DataSource
     public DataSource dataSource(){
-        DruidDataSource datasource = new DruidDataSource();
+    	DruidDataSource datasource = new DruidDataSource();
 
         datasource.setUrl(this.dbUrl);
         datasource.setUsername(username);

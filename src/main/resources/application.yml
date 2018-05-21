@@ -2,6 +2,8 @@ logging:
   file: ./logs/chat.log
   pattern:
     console: "%d - [%5p - %-4L] - %msg%n"
+  level:
+    com.our.chat.dao: DEBUG
     
     
 server:
@@ -9,8 +11,10 @@ server:
   
   
 mybatis:
-  mapper-locations: classpath/:mapper/*.xml
+  mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.our.chat.dimain
+  configuration:
+    mapUnderscoreToCamelCase: true
   
   
 mapper:
