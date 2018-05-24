@@ -1,5 +1,8 @@
 package com.our.chat.controller.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,9 +17,16 @@ public class ChatIndex {
 	 * @return
 	 */
 	@GetMapping("/chat")
-	public String index() {
+	public String index(HttpServletRequest request, HttpServletResponse response) {
 		log.info("ChatIndex index is start");
 		log.info("ChatIndex index is end");
 		return "index";
+	}
+	
+	@GetMapping("/chatDemo")
+	public String chatDemo(HttpServletRequest request, HttpServletResponse response) {
+		log.info("ChatIndex index is start");
+		log.info("ChatIndex index is end");
+		return "chat";
 	}
 }
